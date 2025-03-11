@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const connectToDatabase = require ('./src/config.js');
+
 const dotenv = require ('dotenv');
 
 
@@ -13,6 +15,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use ('/api/v1/auth', require ('./routes/authRoute'));
+app.use ('/api/v1/questions', require ('./routes/interviewRoute'));
 
 
 
@@ -22,4 +25,5 @@ app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)
 });
 
+connectToDatabase();
 
