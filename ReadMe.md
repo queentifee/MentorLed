@@ -108,6 +108,9 @@ Response (Error - 500)
 }
 
 # TASK 3 DOCUMENTATION
+# Implement API endpoints to fetch all interviews and get interview details by ID.
+# Implement pagination for fetching multiple interviews.
+
 # Endpoints
 1. Get All Interviews
 GET /api/v1/interviews/get-all-interviews
