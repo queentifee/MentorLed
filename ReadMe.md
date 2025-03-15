@@ -106,3 +106,100 @@ Response (Error - 500)
   "message": "Failed to save data",
   "error": "Database connection failed"
 }
+
+# TASK 3 DOCUMENTATION
+# Endpoints
+1. Get All Interviews
+GET /api/v1/interviews/get-all-interviews
+Description:
+Fetches all interviews.
+
+Example Response:
+[
+    {
+        "_id": "67d05f8c392f753dcb640208",
+        "title": "session two",
+        "description": "Salary expectection",
+        "questions": [
+           "What is your expected salary?",
+        ]
+        "createdAt": "2025-03-11T16:06:36.638Z",
+        "updatedAt": "2025-03-11T16:06:36.638Z",
+    },
+    {
+        "_id": "67d062e863d3bbe699344454",
+        "title": "JavaScript Basics",
+        "description": "Questions about fundamental JS concepts",
+        "questions": [
+            "What is a closure?",
+            "Explain event bubbling.",
+            "What are promises?"
+        ],
+        "createdAt": "2025-03-11T16:20:56.726Z",
+        "updatedAt": "2025-03-11T16:20:56.726Z",
+    },
+]  
+
+2. Get Interview by ID
+GET /api/v1/interviews/get-interview-by-id/:id
+
+Description:
+Fetches a single interview by ID.
+
+Example Request:
+GET /api/v1/interviews/get-interview-by-id/65a3cdef123456789abc
+
+Example Response:
+{
+        "_id": "67d05f8c392f753dcb640208",
+        "title": "session two",
+        "description": "Salary expectection",
+        "questions": [
+           "What is your expected salary?",
+        ]
+        "createdAt": "2025-03-11T16:06:36.638Z",
+        "updatedAt": "2025-03-11T16:06:36.638Z",
+    }
+
+3. Get Paginated Interviews
+Endpoint:
+GET /api/v1/interviews/get-paginated-interviews
+
+Description:
+Fetches a paginated list of interviews.
+
+Example Request:
+
+GET /api/v1/interviews/get-paginated-interviews?page=2&limit=5
+
+Example Response:
+
+{
+  "totalInterviews": 50,
+  "currentPage": 2,
+  "totalPages": 10,
+  "interviews" : [
+    {
+        "_id": "67d05f8c392f753dcb640208",
+        "title": "session two",
+        "description": "Salary expectection",
+        "questions": [
+           "What is your expected salary?",
+        ]
+        "createdAt": "2025-03-11T16:06:36.638Z",
+        "updatedAt": "2025-03-11T16:06:36.638Z",
+    },
+    {
+        "_id": "67d062e863d3bbe699344454",
+        "title": "JavaScript Basics",
+        "description": "Questions about fundamental JS concepts",
+        "questions": [
+            "What is a closure?",
+            "Explain event bubbling.",
+            "What are promises?"
+        ],
+        "createdAt": "2025-03-11T16:20:56.726Z",
+        "updatedAt": "2025-03-11T16:20:56.726Z",
+    },
+]  
+}

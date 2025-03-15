@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(cors());
 
 app.use ('/api/v1/auth', require ('./routes/authRoute'));
-app.use ('/api/v1/questions', require ('./routes/interviewRoute'));
-
+app.use ('/api/v1/questions', require ('./routes/questionsRoute'));
+app.use ('/api/v1/interview', require ('./routes/interviewRoute'));
 
 
 const PORT = 4000
